@@ -8,7 +8,7 @@ interface BreakingNewsProps {
 }
 
 export const getServerSideProps: GetServerSideProps<BreakingNewsProps> = async () => {
-  await new Promise(r => setTimeout(r,3000));
+  // await new Promise(r => setTimeout(r,3000));
   const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=" + process.env.NEWS_API_KEY);
   const newsResponse: NewsResponse = await response.json();
   return {

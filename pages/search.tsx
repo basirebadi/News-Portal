@@ -1,5 +1,6 @@
 import NewsArticlesGrid from '@/components/NewsArticlesGrid';
 import { NewsArticle } from '@/models/NewsArticles';
+import Head from 'next/head';
 import { FormEvent, useState} from 'react';
 import { Button, Form, Spinner } from 'react-bootstrap';
 
@@ -31,6 +32,10 @@ const SearchPage = () => {
     
   }
   return (
+    <>
+    <Head>
+      <title key="title">Search News - NextJS</title>
+    </Head>
     <main>
       <h1>Welcome to search page</h1>
       <Form onSubmit={handleSubmit}>
@@ -49,6 +54,7 @@ const SearchPage = () => {
         {searchResults && <NewsArticlesGrid articles={searchResults} />}
       </div>
     </main>
+    </>
   );
 };
 
